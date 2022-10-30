@@ -1,0 +1,15 @@
+name: app-web
+region: sfo
+services:
+  - dockerfile_path: Dockerfile
+    github:
+      branch: main
+      deploy_on_push: true
+      repo: intrepion/intrepion-hello-world-web-rust-actix-web
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    name: server
+    routes:
+      - path: /
+    source_dir: /
